@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 // import store from "../src/store";
 import { getClientStore } from "../src/store";
 import { Provider } from "react-redux";
+import { Route } from "react-router-dom";
 
 const store = getClientStore()
 // 同构注水

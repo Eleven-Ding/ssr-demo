@@ -42,22 +42,24 @@ app.get("*", (req, res) => {
         </StaticRouter>
       </Provider>
     );
-    res.send(`<!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-      </head>
-      <body>
-        <div id="root">${component}</div>
-        <script src="/bundle.js"></script>
-        <script>window.__context=${JSON.stringify(store.getState())}</script>
-        </script>
-      </body>
-    </html>
-    `);
+    setTimeout(() => {
+      res.send(`<!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Document</title>
+        </head>
+        <body>
+          <div id="root">${component}</div>
+          <script>window.__context=${JSON.stringify(store.getState())}</script>
+          <script src="/bundle.js"></script>
+          </script>
+        </body>
+      </html>
+      `);
+    }, 2000);
   });
 });
 

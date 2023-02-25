@@ -14,7 +14,6 @@ export const getPositionList = () => {
         "https://www.dingshiyi.top:9002/article/get_articles?limit=8&page=1&type=1"
       )
       .then((res) => {
-        console.log(res.data.data, "111111");
         dispatch(changePosition(res.data.data.articles));
       });
   };
